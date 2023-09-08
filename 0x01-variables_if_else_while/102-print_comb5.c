@@ -1,11 +1,13 @@
 #include <stdio.h>
 
-/**\
- * main - entry point
+/**
+ * main - entry point for the program
+ * Return: 0
  */
 int main(void)
 {
 	int i, j, k, x;
+
 	for (i = '0'; i <= '9'; i++)
 	{
 		for (j = '0'; j <= '9'; j++)
@@ -16,21 +18,21 @@ int main(void)
 				{
 					if (k > i || (k == i && x > j))
 					{
-						putchar(i);
-						putchar(j);
-						putchar(' ');
-						putchar(k);
-						putchar(x);
-						if (i == '9' && j == '8' && k == '9' && x == '9')
-							goto end;
-						putchar(',');
-						putchar(' ');
+					putchar(i);
+					putchar(j);
+					putchar(' ');
+					putchar(k);
+					putchar(x);
+					if (i == '9' && j == '8' && k == '9' && x == '9')
+						goto end;
+					putchar(',');
+					putchar(' ');
 					}
 				}
 			}
 		}
 	}
-	end:
+end:
 	putchar('\n');
 	return (0);
 }

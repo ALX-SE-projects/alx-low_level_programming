@@ -1,11 +1,13 @@
 #include <stdio.h>
 
-/**\
- * main - entry point
+/**
+ * main - entry point for the program
+ * Return: 0
  */
 int main(void)
 {
 	int i, j, k;
+
 	for (i = '0'; i <= '7'; i++)
 	{
 		for (j = i + 1; j <= '8'; j++)
@@ -22,7 +24,7 @@ int main(void)
 			}
 		}
 	}
-	end:
+end:
 	putchar('\n');
 	return (0);
 }
