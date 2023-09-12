@@ -12,8 +12,8 @@ void putint(int n)
 	}
 	else
 	{
-		_putchar('0' + (n % 10));
 		_putchar('0' + (((n - (n % 10)) / 10) % 10));
+		_putchar('0' + (n % 10));
 	}
 }
 
