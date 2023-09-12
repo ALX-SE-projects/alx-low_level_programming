@@ -25,7 +25,11 @@ int main(void)
 	i = 1;
 	j = 2;
 	putint(i);
+	_putchar(',');
+	_putchar(' ');
 	putint(j);
+	_putchar(',');
+	_putchar(' ');
 	counter = 2;
 	while (1)
 	{
