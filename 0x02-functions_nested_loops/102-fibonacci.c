@@ -7,9 +7,9 @@
 int main(void)
 {
 	int counter;
-	long long unsigned int i;
-	long long unsigned int j;
-	long long unsigned int k;
+	long unsigned int i;
+	long unsigned int j;
+	long unsigned int k;
 
 	i = 1;
 	j = 2;
