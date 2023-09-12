@@ -33,13 +33,31 @@ void putint(int n)
  */
 void print_to_98(int n)
 {
-	for (; n <= 98; n++)
+	if (n < 98)
 	{
-		putint(n);
-		if (n == 98)
-			break;
-		putchar(',');
-		putchar(' ');
+		for (; n <= 98; n++)
+		{
+			putint(n);
+			if (n == 98)
+				break;
+			putchar(',');
+			putchar(' ');
+		}
+	{
+	else if (n > 98)
+	{
+		for (; n >= 98; n--)
+		{
+			putint(n);
+			if (n == 98)
+				break;
+			putchar(',');
+			putchar(' ');
+		}
+	}
+	else
+	{
+		putint(98);
 	}
 	putchar('\n');
 }
