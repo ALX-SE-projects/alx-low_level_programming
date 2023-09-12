@@ -29,7 +29,10 @@ void times_table(void)
 	{
 		for (j = 0; j <= 9; j++)
 		{
-			putint(i * j);
+			if (j == 0)
+				_putchar('0');
+			else
+				putint(i * j);
 			if (j == 9)
 				break;
 			_putchar(',');
