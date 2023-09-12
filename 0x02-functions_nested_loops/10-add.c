@@ -5,7 +5,7 @@
  * @i: int_1
  * @j: int_2
  */
-int add(int i, int j);
+int add(int i, int j)
 {
 	return (i + j);
 }
