@@ -9,7 +9,7 @@ void putint(unsigned long int n)
 	{
 		putint(n / 10);
 	}
-    _putchar(n % 10 + '0');
+	_putchar(n % 10 + '0');
 }
 /**
  * main - entry point
