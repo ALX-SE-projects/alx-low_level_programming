@@ -20,6 +20,12 @@ void putint(int n)
 		putchar('0' + (((n - (n % 10)) / 10) % 10));
 		putchar('0' + (n % 10));
 	}
+	else
+	{
+		putchar('0' + (((n - (n % 100)) / 100) % 10));
+		putchar('0' + (((n - (n % 10)) / 10) % 10));
+		putchar('0' + (n % 10));
+	}
 }
 /**
  * print_to_98 - prints all natural numbers from n to 98, followed by a \n
