@@ -13,7 +13,9 @@ int main(void)
 
 	i = 1;
 	j = 2;
-	while (k <= 4000000)
+	k = 0;
+	sum = j;
+	while (1)
 	{
 		k = i + j;
 		i = j;
@@ -22,6 +24,8 @@ int main(void)
 		{
 			sum += k;
 		}
+		if (k > 4000000)
+			break;
 	}
 	printf("%lu\n", sum);
 	return (0);
