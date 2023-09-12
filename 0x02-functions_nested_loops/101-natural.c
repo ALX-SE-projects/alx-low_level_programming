@@ -7,6 +7,7 @@
 int main(void)
 {
 	int result;
+	int i;
 
 	for (i = 0; i < 1024; i++)
 	{
