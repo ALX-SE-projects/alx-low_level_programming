@@ -23,7 +23,7 @@ int main(void)
 		j = k;
 		printf("%lu", k);
 		counter++;
-		if (counter != 100)
+		if (counter != 50)
 		{
 			putchar(',');
 			putchar(' ');
