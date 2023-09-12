@@ -11,7 +11,7 @@ void putint(int n)
 		_putchar(' ');
 		_putchar(' ');
 		_putchar(' ');
-		putchar('0' + n);
+		_putchar('0' + n);
 	}
 	else if (n < 100)
 	{
@@ -37,7 +37,8 @@ void print_times_table(int n)
 {
 	if ((n > 15) || (n < 0))
 		return;
-	int i, j;
+	int i,
+	int j;
 
 	for (i = 0; i <= n; i++)
 	{
