@@ -1,29 +1,20 @@
-#include "main.h"
 #include <stdio.h>
 
+void putint(long int num) {
+    if (num < 0) {
+        putchar('-');
+        num = -num;
+    }
 
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    int r;
+    if (num / 10) {
+        putint(num / 10);
+    }
 
-    r = print_last_digit(-2147483648);
-    putchar('\n');
-    return (0);
+    putchar(num % 10 + '0');
 }
 
-int print_last_digit(int n)
-{
-	n = n % 10;
-    if (n < 0)
-	{
-		n = n * -1;
-	}
-	putchar(n + '0');
-	return (n);
+int main() {
+    long int number = 1234567890;
+    putint(number);
+    return 0;
 }
-
