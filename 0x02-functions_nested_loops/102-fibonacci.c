@@ -7,23 +7,23 @@
 int main(void)
 {
 	int counter;
-	int i;
-	int j;
-	int k;
+	long long unsigned int i;
+	long long unsigned int j;
+	long long unsigned int k;
 
 	i = 1;
 	j = 2;
-	printf("%d, ", i);
-	printf("%d, ", j);
+	printf("%llu, ", i);
+	printf("%llu, ", j);
 	counter = 2;
 	while (1)
 	{
 		k = i + j;
 		i = j;
 		j = k;
-		printf("%d", k);
+		printf("%llu", k);
 		counter++;
-		if (counter != 50)
+		if (counter != 100)
 		{
 			putchar(',');
 			putchar(' ');
