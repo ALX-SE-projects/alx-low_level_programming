@@ -10,19 +10,16 @@ void putint(int n)
 	{
 		_putchar(' ');
 		_putchar(' ');
-		_putchar(' ');
 		_putchar('0' + n);
 	}
 	else if (n < 100)
 	{
-		_putchar(' ');
 		_putchar(' ');
 		_putchar('0' + (((n - (n % 10)) / 10) % 10));
 		_putchar('0' + (n % 10));
 	}
 	else
 	{
-		_putchar(' ');
 		_putchar('0' + (((n - (n % 100)) / 100) % 10));
 		_putchar('0' + (((n - (n % 10)) / 10) % 10));
 		_putchar('0' + (n % 10));
