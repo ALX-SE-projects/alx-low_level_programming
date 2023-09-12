@@ -16,9 +16,9 @@ int main(void)
         char c;
 
         c = string[i];
-        _putchar(c);
         if (c == '\0')
             break;
+        _putchar(c);
         i++;
     }
     return 0;
