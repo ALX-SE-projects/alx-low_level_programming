@@ -48,7 +48,7 @@ void print_times_table(int n)
 				_putchar('0');
 			else
 				putint(i * j);
-			if (j == 9)
+			if (j == n)
 				break;
 			_putchar(',');
 			_putchar(' ');
