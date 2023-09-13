@@ -3,8 +3,7 @@
 
 #define MAX_DIGITS 1000
 
-char[MAX_DIGITS + 1] sumLargeIntegers(char num1[], char num2[]) {
-    char result[MAX_DIGITS + 1];
+void sumLargeIntegers(char num1[], char num2[]) {
     int carry = 0;
     int len1 = strlen(num1);
     int len2 = strlen(num2);
@@ -24,16 +23,15 @@ char[MAX_DIGITS + 1] sumLargeIntegers(char num1[], char num2[]) {
         result[0] = carry + '0';
         result[maxLen + 1] = '\0';
     }
-    return result;
 }
 
 int main() {
     char num1[MAX_DIGITS] = "7540113804746346429";
     char num2[MAX_DIGITS] = "12200160415121876738";
+    char result[MAX_DIGITS + 1];
 
-
-
-    printf("Sum: %s\n", sumLargeIntegers(num1, num2, result));
+    sumLargeIntegers(num1, num2, result);
+    printf("Sum: %s\n", result);
 
     return 0;
 }
