@@ -1,11 +1,21 @@
 #include "main.h"
+#include <stdio.h>
+int myPow(int x,int n)
+{
+	int i, num;
+
+	num = 1;
+	for (i = 0; i < n; ++i)
+		num *= x;
+	return (num);
+}
 /**
  * print_number - prints an integer
  * @n: int to print
  */
 void print_number(int n)
 {
-	int rev, ones, digits, i;
+	int ones, digits, power, left, _;
 
 	if (n < 0)
 	{
@@ -14,36 +24,39 @@ void print_number(int n)
 	}
 	if (n > 0)
 	{
-		/* invert number */
-		n = (n * 10) + 1; /* append one to inverted num to retain front zeros*/
-		rev = 0;
+		/* count digits */
 		digits = 0;
+		_ = n;
 		while (1)
 		{
 			digits++;
 			ones = n % 10;
 			n = (n - ones) / 10;
-			rev += ones;
 			if (n == 0)
 			{
 				break;
 			}
-			rev *= 10;
 		}
-		digits--;
-		/* print it as normal */
-		for (i = 0; i < digits; i++)
+		n = _;
+		/* print int */
+		for (; digits > 0; digits--)
 		{
-			ones = rev % 10;
-			rev = (rev - ones) / 10;
-			_putchar('0' + ones);
-			if (rev == 0)
+			if ( n < 10 && 0)
 			{
+				_putchar('0' + n);
+				_putchar('x');
 				break;
+			}
+			else
+			{
+				power = myPow(10, (digits - 1));
+				left = (n - (n % power)) / power;
+				n -= left * power;
+				_putchar('0' + left);
 			}
 		}
 	}
-	else if (n == 0)
+	else
 	{
 		_putchar('0');
 	}
