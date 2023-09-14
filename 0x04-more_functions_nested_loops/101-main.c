@@ -7,12 +7,8 @@
  */
 int main(void)
 {
-    int i;
 
-    for (i = -1000; i <= 1000; i++)
-    {
-        print_number(i);
+        print_number(0);
         _putchar('\n');
-    }
     return (0);
 }
