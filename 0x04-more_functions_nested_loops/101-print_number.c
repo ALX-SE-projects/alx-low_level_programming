@@ -1,11 +1,12 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_number - prints an integer
  * @n: int to print
  */
 void print_number(int n)
 {
-	int rev, ones;
+	int rev, ones, digits, i;
 
 	if (n < 0)
 	{
@@ -13,9 +14,12 @@ void print_number(int n)
 		n = -n;
 	}
 	/* invert number */
+	n = (n * 10) + 1; /* append one to inverted num to retain front zeros*/
 	rev = 0;
+	digits = 0;
 	while (1)
 	{
+		digits++;
 		ones = n % 10;
 		n = (n - ones) / 10;
 		rev += ones;
@@ -25,8 +29,9 @@ void print_number(int n)
 		}
 		rev *= 10;
 	}
+	digits--;
 	/* print it as normal */
-	while (1)
+	for (i = 0; i < digits; i++)
 	{
 		ones = rev % 10;
 		rev = (rev - ones) / 10;
