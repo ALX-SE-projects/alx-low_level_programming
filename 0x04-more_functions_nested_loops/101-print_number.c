@@ -52,6 +52,7 @@ void print_number(int n)
 				left = (n - (n % power)) / power;
 				n -= left * power;
 				_putchar('0' + left);
+				printf("d: %d, l: %d, n: %d, p: %d\n", digits, left, n, power);
 			}
 		}
 	}
