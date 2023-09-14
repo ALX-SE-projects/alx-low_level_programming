@@ -9,6 +9,7 @@ void print_triangle(int size)
 	{
 		int i, j, k, x;
 
+		j = 0;
 		for (i = 0; i < size; i++)
 		{
 			j++;
