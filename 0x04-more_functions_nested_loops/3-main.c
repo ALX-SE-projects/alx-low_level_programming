@@ -1,5 +1,4 @@
 #include "main.h"
-#include "3-print_numbers.c"
 /**
  * main - check the code
  *
