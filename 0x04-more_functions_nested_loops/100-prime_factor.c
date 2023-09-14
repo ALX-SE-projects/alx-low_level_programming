@@ -5,9 +5,9 @@
  * Return: int
  * @num: number to examine
  */
-long long int get_largest_prime_factor(long long int num)
+long int get_largest_prime_factor(long int num)
 {
-	long long int lf;
+	long int lf, i;
 
 	lf = -1;
 	while (num % 2 == 0)
@@ -15,7 +15,7 @@ long long int get_largest_prime_factor(long long int num)
 		lf = 2;
 		num = num / 2;
 	}
-	for (long long int i = 3; i <= sqrt(num); i = i + 2)
+	for (i = 3; i <= sqrt(num); i = i + 2)
 	{
 		while (num % i == 0)
 		{
@@ -36,6 +36,6 @@ long long int get_largest_prime_factor(long long int num)
  */
 int main(void)
 {
-	printf("%lld\n", get_largest_prime_factor(612852475143));
+	printf("%ld\n", get_largest_prime_factor(612852475143));
 	return (0);
 }
