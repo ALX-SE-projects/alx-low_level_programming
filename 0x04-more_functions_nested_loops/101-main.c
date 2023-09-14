@@ -7,7 +7,12 @@
  */
 int main(void)
 {
-    print_number(10);
-    _putchar('\n');
+    int i;
+
+    for (i = -1000; i <= 1000; i++)
+    {
+        print_number(i);
+        _putchar('\n');
+    }
     return (0);
 }
