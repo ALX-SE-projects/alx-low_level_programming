@@ -1,6 +1,20 @@
 #include "main.h"
-#include <stdio.h>
-int myPow(int x,int n)
+/**
+ * absu - get absolute value of an integer
+ * Return: absolute balue of @value
+ * @value: int to process
+ */
+unsigned int absu(int value)
+{
+	return ((value < 0) ? -((unsigned int)value) : (unsigned int)value);
+}
+/**
+ * _pow - calculates power
+ * Return: @x ** @n
+ * @x: base
+ * @n: exponent
+ */
+int _pow(int x, int n)
 {
 	int i, num;
 
@@ -18,11 +32,8 @@ void print_number(int n)
 	int ones, digits, power, left, _;
 
 	if (n < 0)
-	{
 		_putchar('-');
-		n = -n;
-	}
-	if (n > 0)
+	if (n != 0)
 	{
 		/* count digits */
 		digits = 0;
@@ -41,23 +52,20 @@ void print_number(int n)
 		/* print int */
 		for (; digits > 0; digits--)
 		{
-			if ( n < 10)
+			if (absu(n) < 10)
 			{
-				_putchar('0' + n);
+				_putchar('0' + absu(n));
 				break;
 			}
 			else
 			{
-				power = myPow(10, (digits - 1));
+				power = _pow(10, (digits - 1));
 				left = (n - (n % power)) / power;
 				n -= left * power;
-				_putchar('0' + left);
-				printf("d: %d, l: %d, n: %d, p: %d\n", digits, left, n, power);
+				_putchar('0' + absu(left));
 			}
 		}
 	}
 	else
-	{
 		_putchar('0');
-	}
 }
