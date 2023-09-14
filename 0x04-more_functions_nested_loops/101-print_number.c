@@ -5,42 +5,35 @@
  */
 void print_number(int n)
 {
+	int rev, ones;
+
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
-	if (n > 0)
+	/* invert number */
+	rev = 0;
+	while (1)
 	{
-		/* invert number */
-		int rev, ones;
-
-		rev = 0;
-		while (1)
+		ones = n % 10;
+		n = (n - ones) / 10;
+		rev += ones;
+		if (n == 0)
 		{
-			ones = n % 10;
-			n = (n - ones) / 10;
-			rev += ones;
-			if (n == 0)
-			{
-				break;
-			}
-			rev *= 10;
+			break;
 		}
-		/* print it as normal */
-		while (1)
-		{
-			ones = rev % 10;
-			rev = (rev - ones) / 10;
-			_putchar('0' + ones);
-			if (rev == 0)
-			{
-				break;
-			}
-		}
+		rev *= 10;
 	}
-	else
+	/* print it as normal */
+	while (1)
 	{
-		_putchar('0' + n);
+		ones = rev % 10;
+		rev = (rev - ones) / 10;
+		_putchar('0' + ones);
+		if (rev == 0)
+		{
+			break;
+		}
 	}
 }
