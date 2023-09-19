@@ -4,7 +4,7 @@
 /**
  * print_array - get length of a string.
  * @a: pointer to string to calc its length
- * @b: pointer to string to calc its length
+ * @n: pointer to string to calc its length
  */
 void print_array(int *a, int n)
 {
