@@ -3,7 +3,7 @@
  * rev_string -  reverses a strong.
  * @s: poonter to strong to reverse;
  */
-void rev_string(char *s);
+void rev_string(char *s)
 {
 	int c, o;
 	char ccc;
