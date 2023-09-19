@@ -1,6 +1,6 @@
 #include"main.h"
 /**
- * puts2 - get length of a string.
+ * puts_half - get length of a string.
  * @str: pointer to string to calc its length
  */
 void puts_half(char *str)
