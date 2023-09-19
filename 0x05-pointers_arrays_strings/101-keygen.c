@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	int xx, ssss
+	int xx, ssss;
 	int n;
 	int pass[100];
 
