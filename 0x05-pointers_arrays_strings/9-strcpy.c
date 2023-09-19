@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _strcpy - get length of a string.
+ * Return: char*
  * @dest: pointer to string to calc its length
  * @src: pointer to string to calc its length
  */
