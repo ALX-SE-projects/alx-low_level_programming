@@ -6,7 +6,7 @@
 
 int _atoi(char *s)
 {
-	unsssed int nnn = 0;
+	unsigned int nnn = 0;
 	int sss = 1;
 
 	do {
