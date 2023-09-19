@@ -1,4 +1,5 @@
-#include"main.h"
+#include "main.h"
+#include <stdio.h>
 /**
  * print_array - get length of a string.
  * @a: pointer to string to calc its length
