@@ -7,7 +7,7 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i, n;
+	int i;
 
 	i = 0;
 	while (1)
@@ -26,22 +26,7 @@ int _strcmp(char *s1, char *s2)
 		}
 		else
 		{
-			break;
+			return (s1[i] - s2[i]);
 		}
-	}
-	/* i is the matched length */
-	n = 15;
-	/* find which one is larger */
-	while (1)
-	{
-		if (s1[i] == 0)
-		{
-			return (-n);
-		}
-		else if (s2[i] == 0)
-		{
-			return (n);
-		}
-		i++;
 	}
 }
