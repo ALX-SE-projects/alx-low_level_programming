@@ -23,7 +23,7 @@ char *_strncat(char *dest, char *src, int n)
 		}
 	}
 
-	for (src_len = 0; src_len < n; src_len ++)
+	for (src_len = 0; src_len < n; src_len++)
 	{
 		if (src[src_len])
 		{
