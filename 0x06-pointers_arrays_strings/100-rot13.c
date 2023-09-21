@@ -2,7 +2,7 @@
 /**
  * rot13 - encodes a string using rot13
  * Return: encoded string
- * @s: string to be encoded 
+ * @s: string to be encoded
  */
 char *rot13(char *s)
 {
@@ -16,7 +16,7 @@ char *rot13(char *s)
 		c = s[i];
 		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		{
-			s[i] += step[(c < 'N' && c >= 'A') || (c < 'n' && c >= 'a')]; 
+			s[i] += step[(c < 'N' && c >= 'A') || (c < 'n' && c >= 'a')];
 		}
 		i++;
 	}
