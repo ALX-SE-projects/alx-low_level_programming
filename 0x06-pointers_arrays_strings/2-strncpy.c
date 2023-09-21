@@ -14,7 +14,7 @@ char *_strncpy(char *dest, char *src, int n)
 	zero_rest = 0;
 	for (src_len = 0; src_len < n; src_len++)
 	{
-		if ((dest[dst_len] == 0) || (src[src_len] == 0))
+		if ((dest[dst_len] == 0) || (src[src_len] == 0) || src[src_len] == "")
 		{
 			if ((src[src_len] == 0) && (dest[dst_len] != 0))
 			{
