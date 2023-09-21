@@ -12,10 +12,6 @@ int main(void)
     char *ptr;
     int i;
 
-    _putchar('1');
-    if (*"" == 0)
-        _putchar('n');
-    _putchar('2');
     for (i = 0; i < 98 - 1; i++)
     {
         s1[i] = '*';

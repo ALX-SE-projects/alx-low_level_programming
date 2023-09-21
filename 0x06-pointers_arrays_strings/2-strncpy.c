@@ -12,26 +12,26 @@ char *_strncpy(char *dest, char *src, int n)
 
 	dst_len = 0;
 	zero_rest = 0;
-	if (src[0])
+	for (src_len = 0; src_len < n; src_len++)
 	{
-		for (src_len = 0; src_len < n; src_len++)
+		if ((dest[dst_len] == 0) || (src[src_len] == 0))
 		{
-			if ((dest[dst_len] == 0) || (src[src_len] == 0))
+			if ((src[src_len] == 0) && (dest[dst_len] != 0))
 			{
-				if ((src[src_len] == 0) && (dest[dst_len] != 0))
-				{
-					zero_rest = 1;
-				}
-				break;
+				zero_rest = 1;
 			}
-			else
-			{
-				dest[dst_len] = src[src_len];
-				dst_len++;
-			}
+			break;
 		}
+		else
+		{
+			dest[dst_len] = src[src_len];
+			dst_len++;
+		}
+	}
 
-		while (zero_rest)
+	if (zero_rest)
+	{
+		for (; src_len < n; src_len++)
 		{
 			dest[dst_len] = 0;
 			dst_len++;
