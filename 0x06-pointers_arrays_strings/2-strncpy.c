@@ -13,14 +13,14 @@ char *_strncpy(char *dest, char *src, int n)
 	dst_len = 0;
 	for (src_len = 0; src_len < n; src_len++)
 	{
-		if ((dest[dst_len] != 0) && src[src_len])
+		if ((dest[dst_len] == 0) || (src[src_len] == 0))
 		{
-			dest[dst_len] = src[src_len];
-			dst_len++;
+			break;
 		}
 		else
 		{
-			break;
+			dest[dst_len] = src[src_len];
+			dst_len++;
 		}
 	}
 
