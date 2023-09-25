@@ -12,12 +12,9 @@ char *_strchr(char *s, char c)
 	idx = 0;
 	while (1)
 	{
-		switch (s[idx])
+		if (s[idx] == c || s[idx] == '\0')
 		{
-			case c:
-				return ((char *) (s[idx]));
-			case 0:
-				return ((char *) '\0');
+			return ((char *) (s[idx]));
 		}
 		idx++;
 	}
