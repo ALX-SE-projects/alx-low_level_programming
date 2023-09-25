@@ -6,6 +6,7 @@
  * @s: string
  * @accept: string
  */
+#include <stdio.h>
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int ln;
@@ -29,7 +30,11 @@ unsigned int _strspn(char *s, char *accept)
 			}
 			else if (accept[j] == 0)
 			{
-				ln = 0;
+				if (ln != 0)
+				{
+					return (ln);
+				}
+				break;
 			}
 			j++;
 		}
