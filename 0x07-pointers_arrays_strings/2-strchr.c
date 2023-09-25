@@ -17,7 +17,7 @@ char *_strchr(char *s, char c)
 			case c:
 				return ((char *) (s[idx]));
 			case 0:
-				return ((char *) 0);
+				return ((char *) '\0');
 		}
 		idx++;
 	}
