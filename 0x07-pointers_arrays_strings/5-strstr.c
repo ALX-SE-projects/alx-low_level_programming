@@ -11,6 +11,10 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
+	if (needle[0] == 0)
+	{
+		return ((char *) (&haystack[0]));
+	}
 	int i, j, k, x;
 
 	x = -1;
@@ -36,7 +40,10 @@ char *_strstr(char *haystack, char *needle)
 				}
 				if (needle[j] == 0)
 				{
-					return ((char *) (&haystack[x]));
+					if (x != -1)
+					{
+						return ((char *) (&haystack[x]));
+					}
 				}
 				else
 				{
