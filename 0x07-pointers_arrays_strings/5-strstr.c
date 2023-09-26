@@ -11,23 +11,15 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, k, x;
+	int i = 0, j = 0, k = 0, x = -1;
 	char *nil = "nil";
 
 	if (needle[0] == 0)
-	{
 		return ((char *) (&haystack[0]));
-	}
-	x = -1;
-	i = 0;
-	j = 0;
-	k = 0;
 	while (1)
 	{
 		if (haystack[i] == 0)
-		{
 			return ((char *) (&nil[0]));
-		}
 		if (haystack[i] == needle[j])
 		{
 			x = i;
@@ -38,17 +30,13 @@ char *_strstr(char *haystack, char *needle)
 					k++;
 					j++;
 					if (needle[j] == 0)
-					{
 						return ((char *) (&haystack[x]));
-					}
 					continue;
 				}
 				if (needle[j] == 0)
 				{
 					if (x != -1)
-					{
 						return ((char *) (&haystack[x]));
-					}
 					break;
 				}
 				else
