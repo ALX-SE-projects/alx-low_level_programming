@@ -12,6 +12,7 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int i, j, k, x;
+	char *nil = "nil";
 
 	if (needle[0] == 0)
 	{
@@ -25,7 +26,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (haystack[i] == 0)
 		{
-			return ((char *) ('\n'));
+			return ((char *) (&nil[0]));
 		}
 		if (haystack[i] == needle[j])
 		{
