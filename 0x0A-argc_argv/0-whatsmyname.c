@@ -3,7 +3,7 @@
  * main - entry point
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(__attribute__((unused)) int argc, char *argv[])
 {
 	int i = 0;
 
@@ -15,4 +15,5 @@ int main(int argc, char *argv[])
 		i++;
 	}
 	_putchar('\n');
+	return (0);
 }
