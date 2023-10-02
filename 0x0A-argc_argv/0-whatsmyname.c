@@ -1,6 +1,8 @@
 #include "main.h"
 /**
  * main - entry point
+ * @argc: args count
+ * @argv: list of args
  * Return: 0
  */
 int main(__attribute__((unused)) int argc, char *argv[])
