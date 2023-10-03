@@ -82,6 +82,21 @@ int _atoi(char *s)
 {
 	unsigned int nnn = 0;
 	int sss = 1;
+	int i = 0;
+
+	/* first, verify that no non-digit symbols exist */
+	if (s[0] == '-')
+	{
+		i++;
+	}
+	while (s[i])
+	{
+		if (!(s[i]>= '0' && s[i] <= '9'))
+		{
+			return (-3425);
+		}
+		i++;
+	}
 
 	do {
 		if (*s == '-')
@@ -95,10 +110,6 @@ int _atoi(char *s)
 		else if (nnn > 0)
 		{
 			break;
-		}
-		else
-		{
-			return (-3425);
 		}
 	} while (*s++);
 
