@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * absu - get absolute value of an integer
  * Return: absolute balue of @value
@@ -31,7 +33,8 @@ int _pow(int x, int n)
  */
 void print_number(int n)
 {
-	int ones, digits, power, left, _;
+	int ones, digits, _, i;
+	char *str;
 
 	if (n < 0)
 		_putchar('-');
@@ -52,21 +55,14 @@ void print_number(int n)
 		}
 		n = _;
 		/* print int */
-		for (; digits > 0; digits--)
+		str = (char *) malloc(digits * sizeof(char));
+		for (i = 0; i < digits; i++)
 		{
-			if (absu(n) < 10)
-			{
-				_putchar('0' + absu(n));
-				break;
-			}
-			else
-			{
-				power = _pow(10, (digits - 1));
-				left = (n - (n % power)) / power;
-				n -= left * power;
-				_putchar('0' + absu(left));
-			}
+			str[digits - i - 1] = ('0' + absu(n % 10));
+			n = ((n - (n % 10))) / 10;
 		}
+		for (i = 0; i < digits; i++)
+			_putchar(str[i]);
 	}
 	else
 		_putchar('0');
@@ -81,39 +77,44 @@ void print_number(int n)
 int _atoi(char *s)
 {
 	unsigned int nnn = 0;
-	int sss = 1;
-	int i = 0;
+	int sign = 1;
+	int i = 0, digit_exist = 0, non_digit_exist = 0, comma_idx = -1;
 
 	/* first, verify that no non-digit symbols exist */
 	if (s[0] == '-')
-	{
 		i++;
-	}
 	while (s[i])
 	{
-		if (!(s[i]>= '0' && s[i] <= '9'))
+		if (!(s[i] >= '0' && s[i] <= '9') && s[i] != ',')
+			non_digit_exist = 1;
+		else
 		{
-			return (-3425);
+			digit_exist = 1;
+			if (s[i] == ',')
+			{
+				comma_idx = i;
+				while (s[comma_idx] != '\0')
+				{
+					s[comma_idx] = s[comma_idx + 1];
+					comma_idx++;
+				}
+			}
 		}
 		i++;
 	}
-
+	if (digit_exist && non_digit_exist)
+		return (-3425);
+	else if (!digit_exist && non_digit_exist)
+		return (-23425);
 	do {
 		if (*s == '-')
-		{
-			sss *= -1;
-		}
+			sign *= -1;
 		else if (*s >= '0' && *s <= '9')
-		{
 			nnn = (nnn * 10) + (*s - '0');
-		}
 		else if (nnn > 0)
-		{
 			break;
-		}
 	} while (*s++);
-
-	return (nnn * sss);
+	return (nnn * sign);
 }
 
 /**
@@ -136,7 +137,7 @@ int main(int argc, __attribute__((unused)) char *argv[])
 	for (i = 1; i < argc; i++)
 	{
 		num = _atoi(argv[i]);
-		if (num == -3425)
+		if (num == -3425) /* Error */
 		{
 			char *err = "Error\n";
 			int i = 0;
@@ -148,9 +149,11 @@ int main(int argc, __attribute__((unused)) char *argv[])
 			}
 			return (1);
 		}
+		else if (num == -23425) /* a word */
+			continue;
+		else
 		sum += num;
 	}
-
 	print_number(sum);
 	_putchar('\n');
 
