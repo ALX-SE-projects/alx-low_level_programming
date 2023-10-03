@@ -10,11 +10,12 @@
 int main(int argc, char *argv[])
 {
 	int cents, coins = 0, tmp, block;
+
 	if (argc != 2)
 	{
 		char *err = "Error\n";
-		do
-		{
+
+		do {
 			_putchar(*err);
 		} while (*err++);
 		return (1);
