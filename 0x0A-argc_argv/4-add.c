@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * absu - get absolute value of an integer
  * Return: absolute balue of @value
