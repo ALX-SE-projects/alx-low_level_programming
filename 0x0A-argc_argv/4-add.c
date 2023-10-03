@@ -113,7 +113,7 @@ int _atoi(char *s)
  */
 int main(int argc, __attribute__((unused)) char *argv[])
 {
-	int sum = 0, num;
+	int sum = 0, num, i;
 
 	if (argc == 1)
 	{
@@ -138,7 +138,6 @@ int main(int argc, __attribute__((unused)) char *argv[])
 			return (1);
 		}
 		sum += num;
-		i++;
 	}
 
 	print_number(sum);
