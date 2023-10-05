@@ -1,38 +1,51 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * argstostr - concatenates all the arguments of your program
+ * argstores - concatenates all the arguments of your program
  * @ac: argc
  * @av: argv
  * Return: string
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, len, idx = 0;
-	char *res;
+	char *res, *s;
+	int i, j, x, len;
 
-	if (ac == 0 || av == NULL)
-		return (NULL);
+	len = 0;
+	if (ac == 0 || av == 0)
+		return (0);
+
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
-			len++;
-		len++; /* for \n */
-	}
-	res = (char *) malloc((len + 1) * sizeof(char));
-	if (!res)
-		return (NULL);
-	for (i = 0; i < ac; i++)
-	{
+		s = av[i];
 		j = 0;
-		do {
-			res[idx] = av[i][j];
-			idx++;
-			j++;
-		} while (av[i][j] != '\0');
-		res[idx] = '\n';
-		idx++;
+		while (s[j++])
+		{
+			len++;
+		}
+		len++;
 	}
-	res[idx] = '\0';
+
+	res = (char *) malloc((len + 1) * sizeof(char));
+	if (res == 0)
+		return (0);
+	i = 0;
+	j = 0;
+	for (; j < len && i < ac;)
+	{
+		s = av[i];
+		x = 0;
+
+		while (s[x])
+		{
+			res[j] = s[x];
+			x++;
+			j++;
+		}
+		res[j++] = '\n';
+		i++;
+	}
+	res[j] = '\0';
+
 	return (res);
 }
