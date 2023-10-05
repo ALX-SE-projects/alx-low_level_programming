@@ -15,8 +15,8 @@ void create_wd(char **_words, char *_str, int _start, int _end, int idx)
 
 	i = _end - _start;
 	_words[idx] = (char *) malloc((i + 1) * sizeof(char));
-	for (j = 0; _start < _end; _start++, j++)
-		_words[idx][j] = _str[start];
+	for (j = 0; _start < _end; j++, _start++)
+		_words[idx][j] = _str[_start];
 	_words[idx][j] = '\0';
 }
 
@@ -42,7 +42,7 @@ void utill(char **_words, char *_str)
 		if (_str[i - 1] != ' ' && i > 0 && _str[i] == ' ')
 		{
 			create_wd(_words, _str, _start, i, j);
-			flag = 0;
+			_flag = 0;
 			j++;
 		}
 		i++;
@@ -60,41 +60,41 @@ void utill(char **_words, char *_str)
  */
 char **strtow(char *str)
 {
-	int i, _flag
+	int i, _flag;
 	int _len;
 	char **_words;
 
-	if ((_str[0] == ' ' && _str[1] == '\0') || _str[0] == '\0' || _str == 0)
+	if ((str[0] == ' ' && str[1] == '\0') || str[0] == '\0' || str == 0)
 	{
 		return (0);
 	}
 
 	i = _flag = 0;
 	_len = 0;
-	while (_str[i])
+	while (str[i])
 	{
-		if (_str[i] != ' ' && _flag == 0)
+		if (str[i] != ' ' && _flag == 0)
 		{
-			flag = 1;
+			_flag = 1;
 		}
-		if (i > 0  && _str[i - 1] != ' ' && _str[i] == ' ')
+		if (i > 0  && str[i - 1] != ' ' && str[i] == ' ')
 		{
-			len++;
-			flag = 0;
+			_len++;
+			_flag = 0;
 		}
 		i += 1;
 	}
 
-	len += ((_flag == 1) ? 1 : 0);
-	if (!len)
+	_len = _len + (_flag == 1);
+	if (!_len)
 	{
 		return (0);
 	}
-	_words = (char **) malloc((len + 1) * sizeof(char *));
+	_words = (char **) malloc((_len + 1) * sizeof(char *));
 	if (_words == 0)
 		return (0);
 
-	utill(_words, _str);
+	utill(_words, str);
 	_words[_len] = 0;
 	return (_words);
 }
