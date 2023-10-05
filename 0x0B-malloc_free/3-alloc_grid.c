@@ -21,7 +21,7 @@ int **alloc_grid(int width, int height)
 		arr[i] = calloc(width, sizeof(int));
 		if (!arr[i])
 		{
-			while (i)
+			while (i >= 0)
 			{
 				free(arr[i]);
 				i--;
