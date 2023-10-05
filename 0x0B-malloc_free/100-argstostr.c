@@ -38,5 +38,6 @@ char *argstostr(int ac, char **av)
 		res[idx] = '\n';
 		idx++;
 	}
+	res[idx] = '\0';
 	return (res);
 }
