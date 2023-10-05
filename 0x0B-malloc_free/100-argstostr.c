@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * argstores - concatenates all the arguments of your program
+ * argstostr - concatenates all the arguments of your program
  * @ac: argc
  * @av: argv
  * Return: string
