@@ -12,6 +12,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int s1_size = 0, s2_size = 0, total_size, i;
 	char *result;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	/* get size of strings */
 	while (s1[s1_size])
 		s1_size++;
