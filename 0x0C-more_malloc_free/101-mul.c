@@ -162,7 +162,7 @@ int main(int argc, char *argv[])
 	char *_n1 = argv[1];
 	char *_n2 = argv[2];
 
-	if (argc != 3 || __chk_num(_n1) || __chk_num(_n2))
+	if (argc != 3 || __chk_num(_n2) || __chk_num(_n1))
 		__err_exit();
 
 	if (*_n2 == '0' || *_n1 == '0')
