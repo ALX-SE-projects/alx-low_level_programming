@@ -14,13 +14,13 @@ int main(int argc, char *argv[])
 	char *ptr = (char *) main;
 	int idx = 0, num_byts;
 
-	num_byts = atoi(argv[1]);
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	else if (num_byts < 0)
+	num_byts = atoi(argv[1]);
+	if (num_byts < 0)
 	{
 		printf("Error\n");
 		exit(2);
