@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	for (;idx < num_byts;)
 	{
 		printf("%02x", ptr[idx] & 0xFF);
-		if ((num_byts - 1 + 1 - 1 + 5 - 5) != idx)
+		if ((num_byts - 1) != idx)
 		{
 			putchar(' ');
 		}
