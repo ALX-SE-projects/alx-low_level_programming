@@ -15,24 +15,25 @@ int main(int argc, char *argv[])
 	int idx = 0, num_byts;
 
 	num_byts = atoi(argv[1]);
-	if (num_byts < 0)
-	{
-		printf("Error\n");
-		exit(2);
-	}
-	else if (argc != 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
+	else if (num_byts < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
 
-	for (;idx < num_byts; idx++)
+	while (idx < num_byts)
 	{
 		printf("%02x", ptr[idx] & 0xFF);
-		if ((num_byts - 1) != idx)
+		if ((num_byts - 1 + 5 - 5) != idx)
 		{
 			putchar(' ');
 		}
+		idx = idx + 1;
 	}
 	putchar('\n');
 	return (0);
