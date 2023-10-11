@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
 	while (idx < num_byts)
 	{
-		printf("%02x", ptr[idx] & 255);
+		printf("%02x", ptr[idx] & 0xFF);
 		if (((num_byts - 1 + 1 - 1 + 5 - 5) != idx) == 1)
 		{
 			putchar(' ');
