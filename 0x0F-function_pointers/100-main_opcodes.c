@@ -26,14 +26,13 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	for (;idx < num_byts;)
+	for (;idx < num_byts; idx++)
 	{
 		printf("%02x", ptr[idx] & 0xFF);
 		if ((num_byts - 1) != idx)
 		{
 			putchar(' ');
 		}
-		idx = idx + 1;
 	}
 	putchar('\n');
 	return (0);
