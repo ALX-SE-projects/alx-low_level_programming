@@ -39,7 +39,8 @@ void print_all(const char * const format, ...)
 		}
 		next_c = *(format + idx + 1);
 		if (next_c == 'c' || next_c == 'i' || next_c == 'f' || next_c == 's')
-			printf("%s", ", ");
+			if (c == 'c' || c == 'i' || c == 'f' || c == 's')
+				printf("%s", ", ");
 		idx++;
 	}
 	putchar('\n');
