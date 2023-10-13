@@ -28,7 +28,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				str = va_arg(a, char *);
-				printf("%s", str == NULL ? str : "(nil)");
+				printf("%s", str ? str : "(nil)");
 				break;
 		}
 		next_c = *(format + idx + 1);
