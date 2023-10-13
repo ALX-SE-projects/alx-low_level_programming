@@ -11,6 +11,12 @@ void print_all(const char * const format, ...)
 	char c, next_c;
 	char *str;
 
+	if (!format)
+	{
+		putchar('\n');
+		return;
+	}
+
 	va_start(a, format);
 	while (*(format + idx))
 	{
