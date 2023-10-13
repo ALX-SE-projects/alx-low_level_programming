@@ -29,6 +29,7 @@ void print_all(const char * const format, ...)
 			case 's':
 				str = va_arg(a, char *);
 				printf("%s", str == NULL ? str : "(nil)");
+				break;
 		}
 		next_c = *(format + idx + 1);
 		if (next_c == 'c' || next_c == 'i' || next_c == 'f' || next_c == 's')
