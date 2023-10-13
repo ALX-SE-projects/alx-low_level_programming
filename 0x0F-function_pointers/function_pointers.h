@@ -1,4 +1,5 @@
 #ifndef HEAD
+#include <stdio.h>
 #define HEAD
 void _putchar(int c);
 void print_name(char *name, void (*f)(char *));
