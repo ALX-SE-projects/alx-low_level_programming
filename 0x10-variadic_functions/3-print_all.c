@@ -8,7 +8,7 @@ void print_all(const char * const format, ...)
 {
 	va_list a;
 	unsigned int idx = 0;
-	char c, next_c;
+	char c;
 	char *str;
 
 	if (!format)
@@ -21,6 +21,8 @@ void print_all(const char * const format, ...)
 	while (*(format + idx))
 	{
 		c = *(format + idx);
+		if ((c == 'c' || c == 'i' || c == 'f' || c == 's') && idx)
+			printf("%s", ", ");
 		switch (c)
 		{
 			case 'c':
@@ -37,10 +39,6 @@ void print_all(const char * const format, ...)
 				printf("%s", str ? str : "(nil)");
 				break;
 		}
-		next_c = *(format + idx + 1);
-		if (next_c == 'c' || next_c == 'i' || next_c == 'f' || next_c == 's')
-			if (c == 'c' || c == 'i' || c == 'f' || c == 's')
-				printf("%s", ", ");
 		idx++;
 	}
 	putchar('\n');
