@@ -2,16 +2,19 @@
 #include <string.h>
 #include <stdio.h>
 #include "lists.h"
-/*
- * print_list -  prints all the elements of a list_t list
+/**
+ * print_list - prints all the elements of a list_t list
+ * Return: the number of nodes
  * @h: list
  *
- * Return: the number of nodes
  */
 size_t print_list(const list_t *h)
 {
 	list_t l = *h;
 	unsigned int last = 1, len = 0;
+
+	if (h == NULL)
+		return (0);
 	while (l.next || last)
 	{
 		if ((l.next) == NULL)
