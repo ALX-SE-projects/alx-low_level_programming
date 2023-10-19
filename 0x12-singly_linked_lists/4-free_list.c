@@ -9,12 +9,11 @@
 void free_list(list_t *head)
 {
 	list_t *l = NULL, *tmp;
-	unsigned int last = 0;
 
 	if (head)
 	{
 		l = head;
-		while (l->next || last)
+		while (1)
 		{
 			free(l->str);
 			if (l->next)
