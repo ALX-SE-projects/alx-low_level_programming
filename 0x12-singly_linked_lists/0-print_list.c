@@ -9,11 +9,12 @@
  */
 size_t print_list(const list_t *h)
 {
-	list_t l = *h;
+	list_t l;
 	unsigned int last = 1, len = 0;
 
 	if (!h)
 		return (0);
+	l = *h;
 	while (l.next || last)
 	{
 		if ((l.next) == NULL)
