@@ -30,25 +30,4 @@ listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
-/* for task #14 */
-/**
- * chok - check if node loops
- * @head: first node of list
- * @ptr: node to check
- * @until: idx to stop checking at
- * Return: bool
- */
-unsigned int chok(listint_t *head, const void *ptr, int until)
-{
-	const listint_t *l = &(*head);
-	int i;
-
-	for (i = 0; i < until; i++)
-	{
-		if (ptr == l)
-			return (1);
-		l = l->next;
-	}
-	return (0);
-}
 #endif

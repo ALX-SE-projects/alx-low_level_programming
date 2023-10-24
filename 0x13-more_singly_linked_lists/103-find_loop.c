@@ -1,4 +1,5 @@
 #include "lists.h"
+#include "chook.h"
 /**
  * find_listint_loop - finds the loop in a linked list.
  * @head: head of list
@@ -16,7 +17,7 @@ listint_t *find_listint_loop(listint_t *head)
 		while (l)
 		{
 			count++;
-			if (chok(head, l, count - 1))
+			if (choook(head, l, count - 1))
 			{
 				return (l);
 			}
