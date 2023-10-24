@@ -20,7 +20,7 @@ unsigned int chek(const listint_t *head, const void *ptr, int until)
 	return (0);
 }
 /**
- * print_listint_safe - prints a listint_t linked list.
+ * get_list_len - get length listint_t linked list.
  * @head: head of list
  * Return: len of list
  */
@@ -62,7 +62,7 @@ size_t free_listint_safe(listint_t **h)
 		ll = *h;
 		len = get_list_len(ll);
 		l = *h;
-		for(i = 0; i < len; i++)
+		for (i = 0; i < len; i++)
 		{
 			tmp = l->next;
 			free(l);
