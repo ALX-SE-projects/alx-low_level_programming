@@ -11,16 +11,16 @@ size_t free_listint_safe(listint_t **h)
 
 	while (head)
 	{
-		count++;
 		tmp = head->next;
 		if (head)
 		{
 			*h = NULL;
-			return (count - 1);
+			return (count);
 		}
 		else
 		{
 			free(head);
+			count++;
 		}
 		if (head == tmp)
 		{
