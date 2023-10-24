@@ -11,6 +11,7 @@ void free_listint2(listint_t **head)
 	{
 		nxt = (*head)->next;
 		free(*head);
-		head = &(nxt)
+		head = &nxt;
 	}
+
 }
