@@ -37,7 +37,7 @@ size_t print_listint_safe(const listint_t *head)
 			if (chk(head, l, count - 1))
 			{
 				printf("-> [%p] %d\n", (void *)l, l->n);
-				return (count);
+				return (count - 1);
 			}
 			else
 				printf("[%p] %d\n", (void *)l, l->n);
