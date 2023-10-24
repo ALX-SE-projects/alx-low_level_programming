@@ -22,11 +22,6 @@ size_t free_listint_safe(listint_t **h)
 			free(head);
 			count++;
 		}
-		if (head == tmp)
-		{
-			*h = NULL;
-			return (count - 1);
-		}
 		head = tmp;
 	}
 	return (count);
