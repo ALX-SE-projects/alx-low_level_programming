@@ -16,7 +16,7 @@ size_t free_listint_safe(listint_t **h)
 		if (head)
 		{
 			*h = NULL;
-			return (count);
+			return (count + 1);
 		}
 		else
 		{
