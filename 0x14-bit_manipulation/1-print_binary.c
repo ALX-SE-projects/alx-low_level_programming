@@ -10,7 +10,7 @@ void print_binary(unsigned long int n)
 
 	for (i = (sizeof(unsigned long int) * 8) - 1; i >= 0; i--)
 	{
-		k = n & (1 << (unsigned long int) i);
+		k = n & (1 << i);
 		if (k)
 		{
 			if (!pb)
