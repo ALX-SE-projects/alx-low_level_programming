@@ -24,9 +24,10 @@ int get_sizeof(unsigned long int n)
 void print_binary(unsigned long int n)
 {
 	unsigned int k = 1;
+	int len = get_sizeof(n);
 
-	if (k)
-		k <<= get_sizeof(n);
+	if (len > 0)
+		k <<= len;
 	while (k > 0)
 	{
 		if (n & k)
