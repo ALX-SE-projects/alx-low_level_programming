@@ -5,9 +5,10 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int k, pb = 0, i;
+	unsigned long int k;
+	int pb = 0, i;
 
-	i = (sizeof(unsigned long int) * 8);
+	i = sizeof(unsigned long int) * 8;
 	while (i)
 	{
 		k = n & (1 << (i - 1));
