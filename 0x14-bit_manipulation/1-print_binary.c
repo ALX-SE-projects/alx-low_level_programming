@@ -7,7 +7,7 @@ void print_binary(unsigned long int n)
 {
 	unsigned int pb = 0, i;
 
-	i = sizeof(unsigned long int) * 8;
+	i = sizeof(n) * 8;
 	while (i)
 	{
 		if (n & (1 << (i - 1)))
