@@ -10,7 +10,7 @@ void print_binary(unsigned long int n)
 
 	for (i = 32 - 1; i >= 0; i--)
 	{
-		k = n & (1 << i);
+		k = n & (1 << (unsigned) i);
 		if (k)
 		{
 			if (!pb)
