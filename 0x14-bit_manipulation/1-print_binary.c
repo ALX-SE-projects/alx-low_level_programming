@@ -5,14 +5,12 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int k;
-	int pb = 0, i;
+	unsigned int pb = 0, i;
 
 	i = sizeof(unsigned long int) * 8;
 	while (i)
 	{
-		k = n & (1 << (i - 1));
-		if (k)
+		if (n & (1 << (i - 1)))
 		{
 			if (!pb)
 				pb = 1;
