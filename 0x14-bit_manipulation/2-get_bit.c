@@ -9,6 +9,6 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	if (n == ULONG_MAX)
-		return (-1)
+		return (-1);
 	return ((n & (1 << index)) != 0);
 }
