@@ -126,7 +126,7 @@ void pnt_cls(unsigned char *i_edent)
  * pnt_vsn - ...
  * @i_edent: ...
 */
-void pnt_vsn(unsigned char *i_edent, char *fn)
+void pnt_vsn(unsigned char *i_edent, char __attribute__((__unused__)) *fn)
 {
 	if (EV_CURRENT == 2)
 		BALOO("  Version:                           1\n");
