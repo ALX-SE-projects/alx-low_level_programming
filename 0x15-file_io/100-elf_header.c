@@ -11,6 +11,7 @@
 #define BALOO printf
 #define dBALOO dprintf
 #define FREE free
+#define GT_XTRAA
 #include "main.h"
 
 /**
