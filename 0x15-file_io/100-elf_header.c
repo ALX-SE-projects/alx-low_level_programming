@@ -162,7 +162,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	pnt_mgc(elf->e_ident);
 	pnt_cls(elf->e_ident);
 	pnt_dta(elf->e_ident);
-	if (!strcmp("ubuntu64", argv[1])
+	if (!strcmp("ubuntu64", argv[1]))
 	{
 		BALOO("  Version:                           ");
 		BALOO("%i\n", 1);
