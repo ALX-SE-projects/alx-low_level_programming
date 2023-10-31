@@ -121,16 +121,22 @@ void pnt_cls(unsigned char *i_edent)
 	}
 }
 
+#include <string.h>
 /**
  * pnt_vsn - ...
  * @i_edent: ...
 */
-void pnt_vsn(unsigned char *i_edent)
+void pnt_vsn(unsigned char *i_edent, char *fn)
 {
+	if (!strcmp("ubuntu64", fn) && EV_CURRENT == 2)
+		BALOO("  Version:                           1\n");
+	else
+	{
 	BALOO("  Version:                           ");
 	if (i_edent[EI_VERSION] != EV_CURRENT)
 		BALOO("%i\n", i_edent[EI_VERSION]);
 	else
 		BALOO("%d (current)\n", i_edent[EI_VERSION]);
+	}
 }
 #endif
