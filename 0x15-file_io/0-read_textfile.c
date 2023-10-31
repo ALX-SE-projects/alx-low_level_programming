@@ -12,10 +12,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	FILE *f;
 	unsigned int len = 0;
 
+	if (!filename)
+		return (0);
+	if (access(filename, R_OK) == -1)
+		return (0);
+
 	f = fopen(filename, "r");
+	if (!f)
+		return (0);
 	while ((c = fgetc(f)) != EOF && letters)
 	{
-		putchar(c);
+		write(STDOUT, &c, 1)
 		len++;
 		letters--;
 	}
