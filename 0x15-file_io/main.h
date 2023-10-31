@@ -39,7 +39,7 @@ void pnt_mgc(unsigned char *i_edent)
 	int idx;
 
 	idx = 0;
-	BALOO("  Magic    ");
+	BALOO("  Magic:   ");
 	while (idx < EI_NIDENT)
 	{
 		BALOO("%02x", i_edent[idx]);
