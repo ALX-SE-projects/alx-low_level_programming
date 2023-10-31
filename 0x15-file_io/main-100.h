@@ -1,19 +1,6 @@
 #ifndef GT_XTRAA
 #define GT_XTRAA
-/**
- * cls_fl - ...
- * @olf: ...
-*/
-void cls_fl(int olf)
-{
-	if (close(olf) == -1)
-	{
-		dBALOO(STDERR_FILENO,
-			"Error: Can't close fd %d\n", olf);
-		exit(98);
-	}
-}
-
+#include "main-100-2.h"
 /**
  * pnt_mgc - ...
  * @i_edent: ...
