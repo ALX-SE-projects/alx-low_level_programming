@@ -89,7 +89,7 @@ void pnt_type(unsigned int e_type, unsigned char *i_edent)
 			BALOO("NONE (Unknown type)\n");
 			break;
 		case ET_EXEC:
-			BALOO("EXEC (Exexutable file)\n");
+			BALOO("EXEC (Executable file)\n");
 			break;
 		case ET_CORE:
 			BALOO("CORE (Core file)\n");
