@@ -129,7 +129,7 @@ void pnt_cls(unsigned char *i_edent)
 void pnt_vsn(unsigned char *i_edent, char __attribute__((__unused__)) *fn)
 {
 	BALOO("  Version:                           ");
-	if (i_edent[EI_VERSION] != EV_CURRENT)
+	if (i_edent[EI_VERSION] == EV_CURRENT)
 		BALOO("%d (current)\n", i_edent[EI_VERSION]);
 	else
 		BALOO("%i\n", i_edent[EI_VERSION]);
