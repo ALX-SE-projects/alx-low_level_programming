@@ -14,7 +14,6 @@
 ssize_t read_textfile(const char *filename, size_t letters);
 int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
-#endif
 #ifdef GT_XTRAA
 /**
  * cls_fl - ...
@@ -125,6 +124,7 @@ void pnt_cls(unsigned char *i_edent)
 /**
  * pnt_vsn - ...
  * @i_edent: ...
+ * @_EV_CURRENT: ...
 */
 void pnt_vsn(unsigned char *i_edent, int _EV_CURRENT)
 {
@@ -139,4 +139,5 @@ void pnt_vsn(unsigned char *i_edent, int _EV_CURRENT)
 	else
 		BALOO("%i\n", i_edent[EI_VERSION]);
 }
+#endif
 #endif
