@@ -128,7 +128,7 @@ void pnt_cls(unsigned char *i_edent)
 */
 void pnt_vsn(unsigned char *i_edent, char *fn)
 {
-	if (!strcmp("ubuntu64", fn) && EV_CURRENT == 2)
+	if (EV_CURRENT == 2)
 		BALOO("  Version:                           1\n");
 	else
 	{
