@@ -8,7 +8,7 @@
  * @idx: idx of the list where the new node should be added. Index starts at 0
  * @n: value of new node
  *
- * Return: the address of the new node, or NULL if it failed
+ * Returns: the address of the new node, or NULL if it failed
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -17,23 +17,47 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (!h)
 		return (NULL);
+
 	new = malloc(sizeof(dlistint_t));
 	if (!new)
 		return (NULL);
 	new->n = n;
+
 	current = *h;
+	if (!current)
+	{
+		if (idx == 0)
+		{
+			*h = new;
+			new->prev = NULL;
+			new->next = NULL;
+			return (new);
+		}
+		else
+		{
+			return (NULL);
+		}
+	}
 	for (i = 0; i < idx - 1; i++)
 	{
 		if (current->next)
+		{
 			current = current->next;
+		}
 		else
+		{
+			current = NULL;
 			break;
+		}
 	}
-	if (i != idx - 2)
+	if (!current)
 		return (NULL);
-	new->prev = current;
-	new->next = current->next;
-	current->next->prev = new;
-	current->next = new;
-	return (new);
+	else
+	{
+		new->prev = current;
+		new->next = current->next;
+		current->next->prev = new;
+		current->next = new;
+		return (new);
+	}
 }
