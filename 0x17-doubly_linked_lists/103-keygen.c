@@ -5,6 +5,6 @@
  */
 int main(void)
 {
-    printf("ok\n");
+    printf("Congrats!\n");
     return (0);
 }
