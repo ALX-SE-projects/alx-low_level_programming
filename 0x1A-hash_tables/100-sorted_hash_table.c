@@ -230,7 +230,7 @@ void shash_table_delete(shash_table_t *ht)
 	}
 	free(ht->array);
 	ht->array = NULL;
-    ht->stail = NULL;
+	ht->stail = NULL;
 	ht->shead = NULL;
 	ht->size = 0;
 	free(ht);
