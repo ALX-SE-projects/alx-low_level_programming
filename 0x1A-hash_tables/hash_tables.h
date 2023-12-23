@@ -41,6 +41,40 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
 void hash_table_delete(hash_table_t *ht);
+
+/**
+ * struct shash_node_s - d adasd asdasdasda ads
+ *
+ * @key: ad asd asdasd as
+ * @value: ad asd asdasd adas
+ * @next: as dasd adas dsad a
+ * @sprev: da dasd asdasdas d
+ * @snext: adsadas dsada dsa as
+ */
+typedef struct shash_node_s
+{
+	char *key;
+	char *value;
+	struct shash_node_s *next;
+	struct shash_node_s *sprev;
+	struct shash_node_s *snext;
+} shash_node_t;
+
+/**
+ * struct shash_table_s - adasdasd ads ada
+ *
+ * @size: asdasdasdsad
+ * @array: adsasdsadsadsad
+ * @shead: dadas dadsada s
+ * @stail: dasdas dasdada
+ */
+typedef struct shash_table_s
+{
+	unsigned long int size;
+	shash_node_t **array;
+	shash_node_t *shead;
+	shash_node_t *stail;
+} shash_table_t;
 void shash_table_delete(shash_table_t *ht);
 void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_print(const shash_table_t *ht);
